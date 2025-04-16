@@ -1,0 +1,56 @@
+/* category.css */
+
+.sectionC {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .category-headingC {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  .cards-wrapperC {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* ✅ Force 3 in a row */
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: stretch;
+  }
+  
+  .destination-cardC {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    height: 300px; /* ✅ Prevent shaking */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .destination-cardC:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-imageC {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-titleC {
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 1rem;
+    color: #333;
+  }
+  
