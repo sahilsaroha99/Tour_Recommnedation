@@ -23,17 +23,15 @@
   }
   
   .destination-cardC {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    height: 300px; /* ✅ Prevent shaking */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  flex: 1 1 300px;
+  max-width: 300px;
+  background-color: #ffffffdd;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
   }
   
   .destination-cardC:hover {
