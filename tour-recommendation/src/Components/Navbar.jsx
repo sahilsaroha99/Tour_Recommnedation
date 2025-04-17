@@ -1,15 +1,20 @@
-import { Link } from 'react-router-dom';
-import '../index.css';
+import React, { useState } from 'react';
+import '../index.css'; 
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="navbar">
-      <div className="logo">TourMate</div>
-      <div className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/tours">Tours</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
+      <div className="logo">Travel India</div>
+      <button className="nav-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </button>
+      <div className={`nav-links ${menuOpen ? 'show' : ''}`}>
+        <a href="/">Home</a>
+        <a href="/tours">Tours</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
       </div>
     </nav>
   );
