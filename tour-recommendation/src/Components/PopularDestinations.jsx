@@ -6,7 +6,7 @@ const destinations = [
   { title: 'Beach', image: '/images/beach.jpg' },
   { title: 'Historical', image: '/images/historical.jpg' },
   { title: 'Hill Station', image: '/images/hill.jpg' },
-  { title: 'Hill Station', image: '/images/hill.jpg' },
+  { title: 'Sample(Test)', image: '/images/hill.jpg' },
 ];
 
 const PopularDestinations = () => {
