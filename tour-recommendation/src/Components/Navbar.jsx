@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="logo"><a href='/'>Travel Mate</a></div>
+      <div className="logo"><a href='/'>TravelMate</a></div>
       <button className="nav-toggle" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
       </button>
