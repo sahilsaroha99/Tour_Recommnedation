@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import '../index.css';
+import '../topdestination.css';
 
 const destinations = [
   { name: 'Goa', image: '/images/goa.jpg' },
