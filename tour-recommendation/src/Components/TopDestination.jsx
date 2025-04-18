@@ -1,8 +1,7 @@
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import '../topdestination.css';
+import '../topdestination.css'; // keep your CSS file
 
 const destinations = [
   { name: 'Goa', image: '/images/goa.jpg' },
@@ -13,16 +12,29 @@ const destinations = [
 
 const TopDestination = () => {
   return (
-    <div className="section-container">
+    <div className="top-destination-container">
       <h2 className="top-destination-heading">Top Destinations</h2>
       <Swiper
         modules={[Autoplay]}
-        slidesPerView={3}
         centeredSlides={true}
         loop={true}
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
+        }}
+        breakpoints={{
+          0: {
+            slidesPerView: 1.1, // Show 1 full + a bit of next
+            spaceBetween: 10,
+          },
+          600: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
         }}
         className="swiper-container"
       >
