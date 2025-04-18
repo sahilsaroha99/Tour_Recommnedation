@@ -64,3 +64,46 @@
 .explore-btn:hover {
   background-color: #2563eb;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .tours-container {
+    width: 100%;
+    padding: 20px 10px;
+  }
+
+  .tours-heading {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .tours-grid {
+    gap: 20px;
+  }
+
+  .tour-card {
+    flex: 1 1 calc(50% - 20px); /* 2 cards per row with spacing */
+    max-width: calc(50% - 20px);
+    padding: 15px;
+  }
+
+  .tour-image {
+    height: 160px;
+  }
+
+  .tour-name {
+    font-size: 1.1rem;
+  }
+
+  .explore-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tour-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
