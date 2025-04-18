@@ -1,10 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../index.css';
+import '../popular.css';
 
 const destinations = [
   { title: 'Beach', image: '/images/beach.jpg' },
   { title: 'Historical', image: '/images/historical.jpg' },
+  { title: 'Hill Station', image: '/images/hill.jpg' },
   { title: 'Hill Station', image: '/images/hill.jpg' },
 ];
 
@@ -18,7 +19,7 @@ const PopularDestinations = () => {
   };
 
   return (
-    <div className="section-container">
+    <div className="popu-container">
       <h2 className="destinations-heading">Popular Categories</h2>
       <div className="cards-wrapper">
         {destinations.map((dest, index) => (
