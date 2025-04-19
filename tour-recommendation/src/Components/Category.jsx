@@ -54,16 +54,15 @@ const Category = () => {
             onClick={() => handleCardClick(place.name)}
           >
             <img
-  src={place.image}
-  alt={place.name}
-  className="card-imageC"
-  loading="lazy"
-  onError={(e) => {
-    e.target.onerror = null;
-    e.target.src = '/images/placeholder.jpg';
-  }}
-/>
-
+              src={place.image}
+              alt={place.name}
+              className="card-imageC"
+              loading="lazy"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = '/images/placeholder.jpg';
+              }}
+            />
             <div className="card-titleC">{place.name}</div>
           </div>
         ))}
