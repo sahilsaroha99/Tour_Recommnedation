@@ -69,7 +69,7 @@ const Hero = () => {
           <input
             type="text"
             className="hero-search"
-            placeholder="e.g. Manali, Goa, Jaipur..."
+            placeholder="e.g. Manali, Goa, Jaipur.."
           />
         </div>
       </div>
