@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { data, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import '../city.css';
 
 const City = () => {
@@ -9,8 +9,8 @@ const City = () => {
 
   useEffect(() => {
     const sanitizedCity = decodeURIComponent(cityName).trim();
-    
-    // Fetch city info from your existing JSON API
+
+    // Fetch city info
     fetch(`http://localhost:5000/api/cities`)
       .then((res) => res.json())
       .then((data) => {
@@ -18,36 +18,42 @@ const City = () => {
         setCityData(matched);
       });
 
-    // Fetch recommended city names
+    // Fetch recommendations
     fetch(`http://127.0.0.1:5000/recommend?place=${sanitizedCity}`)
-     .then((res) => res.json())
+      .then((res) => res.json())
       .then((data) => {
-        setRecommendedCities(data.recommendations); // Array of city names
-      }); 
-
-      console.log("Sanitizec City :")
-      console.log(data)
-      console.log(sanitizedCity);
-      
+        setRecommendedCities(data.recommendations);
+      });
   }, [cityName]);
 
-  if (!cityData) return <div>Loading...</div>;
+  const getImagePath = (name) => {
+    const basePath = `/images/${name.toLowerCase().replace(/\s+/g, '')}`;
+    return `${basePath}.jpg`;
+  };
 
-  console.log("Recommended cities:", recommendedCities);
-  console.log("City Name Passed to API:", cityName);
+  const handleImageError = (e) => {
+    const src = e.target.src;
+    if (src.endsWith('.jpg')) {
+      e.target.src = src.replace('.jpg', '.jpeg');
+    }
+  };
 
   const handleCityClick = (name) => {
     window.location.href = `/${name.toLowerCase()}`;
   };
-  
-  
+
+  if (!cityData) return <div>Loading...</div>;
+
   return (
     <div className="section-container city-wrapper">
-      {/* City Info Section */}
+      {/* City Info */}
       <div className="city-info">
         <div className="city-image">
-        <img src={`/images/${cityName.toLowerCase().replace(/\s+/g, '')}.jpg`} alt={cityName} />
-
+          <img
+            src={getImagePath(cityName)}
+            alt={cityName}
+            onError={handleImageError}
+          />
         </div>
         <div className="city-details">
           <h2>{cityData.city}</h2>
@@ -62,24 +68,28 @@ const City = () => {
 
       {/* Recommended Places */}
       <div className="recommended-section">
-  <h2 className="recommended-heading">Recommended Places Near {cityName}</h2>
-  <div className="recommended-marquee">
-    <div className="recommended-track">
-      {[...recommendedCities, ...recommendedCities].map((name, index) => (
-        <div
-          className="recommended-card"
-          key={index}
-          onClick={() => handleCityClick(name)}
-          style={{ cursor: 'pointer' }}
-        >
-          <img src={`/images/${name.toLowerCase()}.jpg`} alt={name} className="recommended-img" />
-          <div className="recommended-name">{name}</div>
+        <h2 className="recommended-heading">Recommended Places Near {cityName}</h2>
+        <div className="recommended-marquee">
+          <div className="recommended-track">
+            {[...recommendedCities, ...recommendedCities].map((name, index) => (
+              <div
+                className="recommended-card"
+                key={index}
+                onClick={() => handleCityClick(name)}
+                style={{ cursor: 'pointer' }}
+              >
+                <img
+                  src={getImagePath(name)}
+                  alt={name}
+                  className="recommended-img"
+                  onError={handleImageError}
+                />
+                <div className="recommended-name">{name}</div>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</div>
-
+      </div>
     </div>
   );
 };

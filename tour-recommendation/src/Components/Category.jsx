@@ -7,8 +7,8 @@ const categoryData = {
     { name: 'Goa', image: '/images/goa.jpg' },
     { name: 'Pondicherry', image: '/images/pondicherry.jpg' },
     { name: 'Alibaug', image: '/images/alibaug.jpg' },
-    { name: 'Gokarna', image: '/images/gokarna.jpg' },
-    { name: 'Diu', image: '/images/diu.jpg' },
+    { name: 'Gokarna', image: '/images/gokarna.jpeg' },
+    { name: 'Diu', image: '/images/diu.jpeg' },
   ],
   Historical: [
     { name: 'Jaipur', image: '/images/jaipur.jpg' },
