@@ -35,13 +35,19 @@ const City = () => {
 
   console.log("Recommended cities:", recommendedCities);
   console.log("City Name Passed to API:", cityName);
+
+  const handleCityClick = (name) => {
+    window.location.href = `/${name.toLowerCase()}`;
+  };
+  
   
   return (
     <div className="section-container city-wrapper">
       {/* City Info Section */}
       <div className="city-info">
         <div className="city-image">
-          <img src={`/images/${cityName.toLowerCase()}.jpg`} alt={cityName} />
+        <img src={`/images/${cityName.toLowerCase().replace(/\s+/g, '')}.jpg`} alt={cityName} />
+
         </div>
         <div className="city-details">
           <h2>{cityData.city}</h2>
@@ -56,18 +62,24 @@ const City = () => {
 
       {/* Recommended Places */}
       <div className="recommended-section">
-        <h2 className="recommended-heading">Recommended Places Near {cityName}</h2>
-        <div className="recommended-marquee">
-          <div className="recommended-track">
-            {[...recommendedCities, ...recommendedCities].map((name, index) => (
-              <div className="recommended-card" key={index}>
-                <img src={`/images/${name.toLowerCase()}.jpg`} alt={name} className="recommended-img" />
-                <div className="recommended-name">{name}</div>
-              </div>
-            ))}
-          </div>
+  <h2 className="recommended-heading">Recommended Places Near {cityName}</h2>
+  <div className="recommended-marquee">
+    <div className="recommended-track">
+      {[...recommendedCities, ...recommendedCities].map((name, index) => (
+        <div
+          className="recommended-card"
+          key={index}
+          onClick={() => handleCityClick(name)}
+          style={{ cursor: 'pointer' }}
+        >
+          <img src={`/images/${name.toLowerCase()}.jpg`} alt={name} className="recommended-img" />
+          <div className="recommended-name">{name}</div>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
+
     </div>
   );
 };
