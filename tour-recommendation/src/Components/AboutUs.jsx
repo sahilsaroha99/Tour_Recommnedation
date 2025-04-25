@@ -16,7 +16,7 @@ const AboutUs = () => {
           </p>
         </div>
         <div className="team-member">
-          <img src="/images/person2.png" alt="Sangam Khushwa" className="team-image" />
+          <img src="/images/person2.png" alt="Sangam  Kushwah" className="team-image" />
           <h3 className="team-name">Sangam Khushwa</h3>
           <p >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, fugiat! Voluptatem perspiciatis minus laudantium voluptatum.
