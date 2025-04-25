@@ -68,7 +68,7 @@ const City = () => {
 
       {/* Recommended Places */}
       <div className="recommended-section">
-        <h2 className="recommended-heading">Recommended Places Near {cityName}</h2>
+        <h2 className="recommended-heading">Recommended Places</h2>
         <div className="recommended-marquee">
           <div className="recommended-track">
             {[...recommendedCities, ...recommendedCities].map((name, index) => (
